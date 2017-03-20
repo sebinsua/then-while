@@ -6,9 +6,24 @@
   "repository": "git@github.com:sebinsua/then-while.git",
   "author": "Seb Insua <me@sebinsua.com>",
   "license": "MIT",
+  "keywords": [
+    "then",
+    "promise",
+    "while",
+    "async",
+    "sync",
+    "predicate"
+  ],
   "scripts": {
+    "commitmsg": "validate-commit-msg",
+    "prepush": "npm run -s test",
+    "push": "git push --follow-tags origin master",
     "format": "prettier-standard-formatter index.js test.js",
-    "test": "ava"
+    "test": "npm run -s format && ava",
+    "release": "npm run -s test && standard-version && npm publish"
+  },
+  "engines": {
+    "node": "^6"
   },
   "dependencies": {
     "any-promise": "^1",
@@ -17,7 +32,10 @@
   },
   "devDependencies": {
     "ava": "*",
+    "husky": "*",
     "prettier-standard-formatter": "*",
-    "sinon": "^2.1.0"
+    "sinon": "*",
+    "standard-version": "*",
+    "validate-commit-msg": "*"
   }
 }

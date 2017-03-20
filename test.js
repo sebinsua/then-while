@@ -14,7 +14,7 @@ test('should be able to generate a value', async t => {
   return t.is((await generateToken('arg')).substr(0, 2), PREFIX)
 })
 
-test('should repeatedly call the predicate and step while the predicate is true', async t => {
+test('should call the step while the predicate is true', async t => {
   const predicate = sinon.stub()
   predicate.onCall(0).returns(true)
   predicate.onCall(1).returns(true)
