@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "ava": "*",
-    "prettier-standard-formatter": "*"
+    "prettier-standard-formatter": "*",
+    "sinon": "^2.1.0"
   }
 }
